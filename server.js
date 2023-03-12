@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
 const Data = require("./noteModel");
 const assert = require("assert");
 const bodyParser=require('body-parser');
+const port = process.env.port || 3000;
 
 app.use(bodyParser.json());
 
@@ -78,8 +79,6 @@ console.log('data saved in db success fully');
 });
 
 // Start the server on localhost:8081
-var server = app.listen(8081, '192.168.0.100', () => {
-    var host = server.address().address;
-    var port = server.address().port;
-    console.log("Example app listening at http://%s:%s", host, port);
-});
+app.listen(port, () => {
+    console.log('your server is running in the following ports::', port)
+    })
