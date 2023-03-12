@@ -8,9 +8,8 @@ const bodyParser=require('body-parser');
 
 app.use(bodyParser.json());
 
-const urlString = 'mongodb://localhost/NishanthLogin'
 
-const urlString2 = "mongodb+srv://vibish123:vibish123@cluster0.jcfnzmz.mongodb.net/?retryWrites=true&w=majority"
+const urlString = "mongodb+srv://vibish123:vibish123@cluster0.jcfnzmz.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose.connect(urlString, {
     useNewUrlParser: true,
