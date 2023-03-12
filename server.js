@@ -7,7 +7,17 @@ const assert = require("assert");
 const bodyParser=require('body-parser');
 
 app.use(bodyParser.json());
-mongoose.connect("mongodb://localhost/NishanthLogin");
+
+const urlString = 'mongodb://localhost/NishanthLogin'
+
+const urlString2 = "mongodb+srv://vibish123:vibish123@cluster0.jcfnzmz.mongodb.net/?retryWrites=true&w=majority"
+
+mongoose.connect(urlString, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+    })
 mongoose.connection.once("open", () => {
     console.log("Connected!");
 }).on("error", function(error) {
