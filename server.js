@@ -5,10 +5,11 @@ var mongoose = require('mongoose')
 const Data = require("./noteModel");
 const assert = require("assert");
 const bodyParser=require('body-parser');
+const cors = require('cors');
 // const port = process.env.port || 3000;
 
 app.use(bodyParser.json());
-
+app.use(cors);
 
 const urlString = "mongodb+srv://vibish123:vibish123@cluster0.jcfnzmz.mongodb.net/?retryWrites=true&w=majority"
 
